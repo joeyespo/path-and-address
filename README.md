@@ -49,6 +49,17 @@ Usage
 Implement a CLI front-end in Python that exposes the above `[path] [address]`
 pattern. Then call `resolve(path, address)`.
 
+Example, using `sys.argv` directly:
+
+```python
+import sys
+from path_and_pattern import resolve
+
+path, host, port = resolve(*argv[1:])
+```
+
+More examples can be found in the "examples" directory.
+
 
 Installation
 ------------

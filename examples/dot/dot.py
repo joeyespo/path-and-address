@@ -26,6 +26,12 @@ def main(args=None):
     path, address = resolve(args['<path>'], args['<address>'])
     host, port = split_address(address)
 
+    # Validate arguments
+    if address and not (host or port):
+        print 'Error: Invalid address', repr(address)
+        return
+
+    # Default values
     if path is None:
         path = '.'
     if host is None:

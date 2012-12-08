@@ -70,7 +70,7 @@ To install, simply:
 $ pip install path-and-address
 ```
 
-or put it in your project's `requirements.txt`.
+Or put it in your project's `requirements.txt`.
 
 
 Contributing
@@ -81,5 +81,5 @@ Contributing
 2. Fork the repository
 3. Send a pull request
 
+
 [pols]: http://en.wikipedia.org/wiki/Principle_of_least_astonishment
-[docopt]: http://docopt.org

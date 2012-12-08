@@ -1,7 +1,8 @@
 Path-and-Address
 ================
 
-Functions for command-line applications used by humans.
+Functions for command-line server tools used by humans.
+
 
 Description
 -----------

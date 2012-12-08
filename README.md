@@ -38,8 +38,8 @@ $ your_app 0.0.0.0
 $ your_app . 0.0.0.0
  * Serving . on http://0.0.0.0:5000/
 
-$ your_app http://localhost/
- * Serving . on http://localhost:5000/
+$ your_app 0.0.0.0:8080
+ * Serving . on http://0.0.0.0:8080/
 ```
 
 

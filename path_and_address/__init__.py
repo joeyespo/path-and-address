@@ -32,7 +32,7 @@ def resolve(path_or_address=None, address=None, *ignored):
 
 
 def split_address(address):
-    """Returns (host, port) from the specified address string. Note that (None, None) is returned if address is invalid."""
+    """Returns (host, port) with an integer port from the specified address string. (None, None) is returned if the address is invalid."""
     invalid = None, None
     if not address:
         return invalid
@@ -47,7 +47,10 @@ def split_address(address):
     if len(components) == 1:
         components.insert(0 if valid_port(components[0]) else 1, None)
 
-    return components
+    host, port = components
+    port = int(port) if port else None
+
+    return host, port
 
 
 def valid_address(address):

@@ -32,7 +32,7 @@ def resolve(path_or_address=None, address=None, *ignored):
 
 
 def split_address(address):
-    """Returns (host, port) from the specified address string."""
+    """Returns (host, port) from the specified address string. Note that (None, None) is returned if address is invalid."""
     invalid = None, None
     if not address:
         return invalid

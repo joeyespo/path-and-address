@@ -11,7 +11,6 @@ Functions for command-line server tools used by humans.
 __version__ = '0.1'
 
 
-import os
 import re
 
 
@@ -24,7 +23,7 @@ def resolve(path_or_address=None, address=None, *ignored):
         return path_or_address, address
 
     path = None
-    if not valid_address(path_or_address) or os.path.exists(path_or_address):
+    if not valid_address(path_or_address):
         path = path_or_address
     else:
         address = path_or_address

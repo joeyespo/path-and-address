@@ -23,7 +23,7 @@ def resolve(path_or_address=None, address=None, *ignored):
         return path_or_address, address
 
     path = None
-    if not valid_address(path_or_address):
+    if None in split_address(path_or_address):
         path = path_or_address
     else:
         address = path_or_address

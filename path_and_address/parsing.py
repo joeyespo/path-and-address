@@ -21,7 +21,7 @@ def split_address(address):
     if not address:
         return invalid
 
-    components = address.split(':')
+    components = str(address).split(':')
     if len(components) > 2 or not valid_hostname(components[0]):
         return invalid
 

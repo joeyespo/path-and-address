@@ -79,6 +79,8 @@ Contributing
 1. Check the open issues or open a new issue to start a discussion around
    your feature idea or the bug you found
 2. Fork the repository
+3. Write tests to show that the bug was fixed or that the feature works
+   as expected
 3. Send a pull request
 
 

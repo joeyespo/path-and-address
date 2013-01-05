@@ -9,7 +9,7 @@ def valid_address(address):
     if not address:
         return False
 
-    components = address.split(':')
+    components = str(address).split(':')
     if len(components) > 2 or not valid_hostname(components[0]):
         return False
 

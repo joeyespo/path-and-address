@@ -3,8 +3,9 @@ from ..parsing import resolve, split_address
 
 
 paths = [
-    '.',
+    '0.0.0.0',
     './80',
+    '.',
     '/file',
     'path/to/file',
     '/path/to/file',
@@ -12,7 +13,6 @@ paths = [
     'path\\to\\file',
     '\\path\\to\\file',
     'C:\\path\\to\\file',
-    '0.0.0.0',
 ]
 addresses = [
     '80',

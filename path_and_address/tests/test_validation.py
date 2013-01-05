@@ -11,6 +11,7 @@ def _join_all(hostnames, ports):
 
 
 hostnames = [
+    '0.0.0.0',
     '127.0.0.1',
     'localhost',
     'example.com',
@@ -22,8 +23,7 @@ invalid_hostnames = [
     'example.com/',
     'example.com:8080/',
     'example.com:0',
-    'localhost:0',
-    '127.0.0.1:0',
+    '0.0.0.0:0',
 ]
 
 

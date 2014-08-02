@@ -22,7 +22,10 @@ def split_address(address):
         return invalid
 
     components = str(address).split(':')
-    if len(components) > 2 or not valid_hostname(components[0]):
+    if len(components) > 2:
+        return invalid
+
+    if components[0] and not valid_hostname(components[0]):
         return invalid
 
     if len(components) == 2 and not valid_port(components[1]):

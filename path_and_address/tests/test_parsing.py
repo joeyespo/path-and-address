@@ -36,6 +36,7 @@ ports = [
     5000,
     8080,
     '80',
+    ':80',
 ]
 
 
@@ -58,8 +59,11 @@ def test_split_address():
 
     for address in ports:
         host, port = split_address(address)
-        assert str(address) == str(port), 'Expected a port, %s, got %s' % (repr((None, address)), repr((host, port)))
+        address = str(address).replace(':', '')
+        assert address == str(port), 'Expected a port, %s, got %s' % (repr((None, address)), repr((host, port)))
 
     for h, p in product(hosts, ports):
+        if isinstance(p, basestring):
+            p = str(p).replace(':', '')
         host, port = split_address('%s:%s' % (h, p))
         assert str(host) == str(h) and str(port) == str(p), 'Expected %s, got %s' % (repr((h, p)), repr((host, port)))

@@ -29,7 +29,7 @@ def read(fname):
 
 setup(
     name='path-and-address',
-    version='0.2.0',
+    version='1.0.0',
     description='Functions for server command-line arguments used by humans.',
     long_description=__doc__,
     author='Joe Esposito',

@@ -8,7 +8,7 @@ Functions for command-line server tools used by humans.
 :license: MIT, see LICENSE for more details.
 """
 
-__version__ = '0.2.0'
+__version__ = '1.0.0'
 
 
 from .parsing import resolve, split_address

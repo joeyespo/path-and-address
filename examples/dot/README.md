@@ -24,6 +24,9 @@ $ dot.py .
 
 $ dot.py 80
  * Serving . on http://localhost:80/
+
+$ dot.py . 0.0.0.0:80
+ * Serving . on http://0.0.0.0:80/
 ```
 
 [repo]: https://github.com/joeyespo/path-and-address

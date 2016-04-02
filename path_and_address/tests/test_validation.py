@@ -7,7 +7,7 @@ def _join(host_and_port):
 
 
 def _join_all(hostnames, ports):
-    return map(_join, product(hostnames, ports))
+    return list(map(_join, product(hostnames, ports)))
 
 
 hostnames = [

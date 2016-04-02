@@ -1,10 +1,4 @@
-import os
 from setuptools import setup, find_packages
-
-
-def read(filename):
-    with open(os.path.join(os.path.dirname(__file__), filename)) as f:
-        return f.read()
 
 
 setup(
@@ -19,7 +13,5 @@ setup(
     platforms='any',
     packages=find_packages(),
     package_data={'': ['LICENSE']},
-    install_requires=read('requirements.txt'),
-    zip_safe=False,
-    entry_points={},
+    install_requires=[],
 )

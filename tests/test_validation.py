@@ -1,5 +1,5 @@
 from itertools import product
-from ..validation import valid_address, valid_hostname, valid_port
+from path_and_address import valid_address, valid_hostname, valid_port
 
 
 def _join(host_and_port):

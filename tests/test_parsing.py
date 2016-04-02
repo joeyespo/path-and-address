@@ -1,6 +1,6 @@
 from itertools import product
 import sys
-from ..parsing import resolve, split_address
+from path_and_address import resolve, split_address
 
 if sys.version_info[0] >= 3:
     basestring = str

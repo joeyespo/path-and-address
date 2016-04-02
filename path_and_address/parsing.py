@@ -2,7 +2,10 @@ from .validation import valid_hostname, valid_port
 
 
 def resolve(path_or_address=None, address=None, *ignored):
-    """Returns (path, address) based on consecutive optional arguments, [path] [address]."""
+    """
+    Returns (path, address) based on consecutive optional arguments,
+    [path] [address].
+    """
     if path_or_address is None or address is not None:
         return path_or_address, address
 
@@ -16,8 +19,12 @@ def resolve(path_or_address=None, address=None, *ignored):
 
 
 def split_address(address):
-    """Returns (host, port) with an integer port from the specified address string. (None, None) is returned if the address is invalid."""
+    """
+    Returns (host, port) with an integer port from the specified address
+    string. (None, None) is returned if the address is invalid.
+    """
     invalid = None, None
+
     if not address:
         return invalid
 

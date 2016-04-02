@@ -1,11 +1,13 @@
 import re
 
 
-_hostname_component_re = re.compile('(?!-)[A-Z\d-]{1,63}(?<!-)$', re.IGNORECASE)
+_hostname_re = re.compile('(?!-)[A-Z\d-]{1,63}(?<!-)$', re.IGNORECASE)
 
 
 def valid_address(address):
-    """Determines whether the specified address string is valid."""
+    """
+    Determines whether the specified address string is valid.
+    """
     if not address:
         return False
 
@@ -20,18 +22,22 @@ def valid_address(address):
 
 
 def valid_hostname(host):
-    """Returns whether the specified string is a valid hostname."""
+    """
+    Returns whether the specified string is a valid hostname.
+    """
     if len(host) > 255:
         return False
 
     if host[-1:] == '.':
         host = host[:-1]
 
-    return all(_hostname_component_re.match(c) for c in host.split('.'))
+    return all(_hostname_re.match(c) for c in host.split('.'))
 
 
 def valid_port(port):
-    """Returns whether the specified string is a valid port."""
+    """
+    Returns whether the specified string is a valid port.
+    """
     try:
         return 1 <= int(port) <= 65535
     except:

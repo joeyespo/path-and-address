@@ -1,9 +1,12 @@
-from itertools import product
 import sys
+from itertools import product
+
 from path_and_address import resolve, split_address
+
 
 if sys.version_info[0] >= 3:
     basestring = str
+
 
 paths = [
     '0.0.0.0',
@@ -48,25 +51,30 @@ def test_resolve():
 
     for path in paths:
         p, a = resolve(path)
-        assert p == path, 'Expected a path, %s, got %s' % (repr((path, None)), repr((p, a)))
+        assert p == path, 'Expected a path, %s, got %s' % (
+            repr((path, None)), repr((p, a)))
 
     for host in addresses:
         p, a = resolve(host)
-        assert a == host, 'Expected an address, %s, got %s' % (repr((None, host)), repr((p, a)))
+        assert a == host, 'Expected an address, %s, got %s' % (
+            repr((None, host)), repr((p, a)))
 
 
 def test_split_address():
     for address in hosts:
         host, port = split_address(address)
-        assert address == host, 'Expected a host, %s, got %s' % (repr((address, None)), repr((host, port)))
+        assert address == host, 'Expected a host, %s, got %s' % (
+            repr((address, None)), repr((host, port)))
 
     for address in ports:
         host, port = split_address(address)
         address = str(address).replace(':', '')
-        assert address == str(port), 'Expected a port, %s, got %s' % (repr((None, address)), repr((host, port)))
+        assert address == str(port), 'Expected a port, %s, got %s' % (
+            repr((None, address)), repr((host, port)))
 
     for h, p in product(hosts, ports):
         if isinstance(p, basestring):
             p = str(p).replace(':', '')
         host, port = split_address('%s:%s' % (h, p))
-        assert str(host) == str(h) and str(port) == str(p), 'Expected %s, got %s' % (repr((h, p)), repr((host, port)))
+        assert (str(host) == str(h) and str(port) == str(p),
+                'Expected %s, got %s' % (repr((h, p)), repr((host, port))))

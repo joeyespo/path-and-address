@@ -1,4 +1,5 @@
 from itertools import product
+
 from path_and_address import valid_address, valid_hostname, valid_port
 
 
@@ -28,36 +29,45 @@ invalid_hostnames = [
 
 
 ports = [1, 80, 5000, 8080, 65535]
-invalid_ports = [None, -80, -1, 0, 65536, 75000,
-    float('nan'), '', 'nan', 'hello', 'a string']
+invalid_ports = [
+    None, -80, -1, 0, 65536, 75000,
+    float('nan'), '', 'nan', 'hello', 'a string',
+]
 
 
 addresses = hostnames + ports + _join_all(hostnames, ports)
-invalid_addresses = invalid_hostnames \
-    + _join_all(hostnames, invalid_ports) \
-    + _join_all(invalid_hostnames, ports) \
-    + _join_all(invalid_hostnames, invalid_ports)
+invalid_addresses = (
+    invalid_hostnames +
+    _join_all(hostnames, invalid_ports) +
+    _join_all(invalid_hostnames, ports) +
+    _join_all(invalid_hostnames, invalid_ports))
 
 
 def test_valid_address():
     for address in addresses:
-        assert valid_address(address), 'Invalid address, expected to be valid: ' + repr(address)
+        assert (valid_address(address),
+                'Invalid address, expected to be valid: ' + repr(address))
 
     for address in invalid_addresses:
-        assert not valid_address(address), 'Valid address, expected to be invalid: ' + repr(address)
+        assert (not valid_address(address),
+                'Valid address, expected to be invalid: ' + repr(address))
 
 
 def test_valid_hostname():
     for hostname in hostnames:
-        assert valid_hostname(hostname), 'Invalid hostname, expected to be valid: ' + repr(hostname)
+        assert (valid_hostname(hostname),
+                'Invalid hostname, expected to be valid: ' + repr(hostname))
 
     for hostname in invalid_hostnames:
-        assert not valid_hostname(hostname), 'Valid hostname, expected to be invalid: ' + repr(hostname)
+        assert (not valid_hostname(hostname),
+                'Valid hostname, expected to be invalid: ' + repr(hostname))
 
 
 def test_valid_port():
     for port in ports:
-        assert valid_port(port), 'Invalid port, expected to be valid: ' + repr(port)
+        assert (valid_port(port),
+                'Invalid port, expected to be valid: ' + repr(port))
 
     for port in invalid_ports:
-        assert not valid_port(port), 'Valid port, expected to be invalid: ' + repr(port)
+        assert (not valid_port(port),
+                'Valid port, expected to be invalid: ' + repr(port))

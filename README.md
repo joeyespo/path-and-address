@@ -83,3 +83,4 @@ Contributing
 
 
 [pols]: http://en.wikipedia.org/wiki/Principle_of_least_astonishment
+[authors.md]: ./AUTHORS.md

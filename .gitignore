@@ -5,9 +5,9 @@ dist
 # Environment files
 build
 env
+.cache
 *.so
 *.py[cod]
-local_config.py
 
 # OS-specific files
 .DS_Store

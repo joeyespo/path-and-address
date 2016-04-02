@@ -1,6 +1,9 @@
 from itertools import product
+import sys
 from ..parsing import resolve, split_address
 
+if sys.version_info[0] >= 3:
+    basestring = str
 
 paths = [
     '0.0.0.0',

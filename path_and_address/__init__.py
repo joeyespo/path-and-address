@@ -4,7 +4,7 @@ Path-and-Address
 
 Functions for command-line server tools used by humans.
 
-:copyright: (c) 2012 by Joe Esposito.
+:copyright: (c) 2012-2016 by Joe Esposito.
 :license: MIT, see LICENSE for more details.
 """
 

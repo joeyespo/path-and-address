@@ -25,7 +25,7 @@ def split_address(address):
     """
     invalid = None, None
 
-    if not address:
+    if not address and address != 0:
         return invalid
 
     components = str(address).split(':')

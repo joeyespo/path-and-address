@@ -36,9 +36,10 @@ def valid_hostname(host):
 
 def valid_port(port):
     """
-    Returns whether the specified string is a valid port.
+    Returns whether the specified string is a valid port,
+    including port 0 (random port).
     """
     try:
-        return 1 <= int(port) <= 65535
+        return 0 <= int(port) <= 65535
     except:
         return False
